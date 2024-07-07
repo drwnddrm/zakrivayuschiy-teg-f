@@ -15,6 +15,123 @@
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--accent-color);
+  font-family: var(--main-font-family), sans-serif;
+  background-color: var(--bg-color);
+  background-image: 
+      repeating-linear-gradient(to right, var(--gradient-color) 0 2px, transparent 0 4px),
+      repeating-linear-gradient(to bottom, var(--gradient-color) 0 2px, transparent 0 4px),
+      repeating-linear-gradient(to bottom, var(--accent-gradient-first-color), var(--accent-gradient-second-color));
+  background-size: cover;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-variation-settings: 'wght' var(--main-font-weight);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 100px;
+  margin-block-end: 100px;
+  border: 2px solid var(--accent-color);
+  font-family: var(--accent-font-family), fantasy;
+  background-color: var(--bg-color);
+  padding-block-end: 15px;
+  padding-inline: 120px;
+}
+
+.header__title {
+  align-self: center;
+  padding-block-start: 135px;
+  padding-block-end: 20px;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__description {
+  align-self: center;
+  padding-block-end: 25px;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
+}
+
+.header__theme-menu {
+  padding-inline-start: 18px;
+}
+
+.theme-menu__list {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1.3fr;
+  gap: 12px;
+}
+
+.theme-menu__item {
+  position: relative;
+}
+
+.theme-menu__button {
+  border: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+}
+
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+  position: absolute;
+  left: -14px;
+}
+
+.roadmap {
+  inline-size: 696px;
+  height: 100%;
+}
+
+.roadmap__list {
+  display: grid;
+  gap: 50px;
+}
+
+.roadmap__list-item {
+}
+
+.card {
+  background-color: var(--bg-color);
+  border: 2px solid var(--accent-color);
+}
+
+.card__header {
+  padding-block-end: 4px;
+  padding-inline-start: 10px;
+  padding-block-start: 7px;
+  font-size: 18px;
+  font-variation-settings: 'wght' var(--header-font-weight);
+}
+
+.card__img {
+  inline-size: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-block: 2px solid var(--accent-color);
+}
+
+.card__description {
+  font-variation-settings: 'wght' var(--main-font-weight);
+  
+}
+
+.button__text {
+}
+
+.footer {
+  margin-block-start: 50px;
 }
