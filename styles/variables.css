@@ -10,4 +10,9 @@
   --gradient-color: #d3d3d3;
   --accent-gradient-first-color: #e7e7e7;
   --accent-gradient-second-color: #1a1a1a;
+  --text-stroke-color: #fff;
+  --text-fill-color: #000;
+  --btn-color: #fff;
+  --contour-color: #000;
+  --fill-color: #f00;
 }
