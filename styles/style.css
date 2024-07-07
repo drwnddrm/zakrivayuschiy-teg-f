@@ -77,12 +77,12 @@
 .theme-menu__button {
   position: relative;
   border: none;
+  opacity: 1;
   font-size: 14px;
   text-transform: uppercase;
   background-color: transparent;
-  cursor: pointer;
-  opacity: 1;
   transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
 .theme-menu__button:disabled {
@@ -114,8 +114,8 @@
   outline: none;
   opacity: 0.6;
   background-color: var(--accent-color);
-  block-size: 2px;
   animation: header-focus-backward 0.3s ease;
+  block-size: 2px;
   inline-size: 0;
 }
 
@@ -233,13 +233,13 @@
 }
 
 .card__icon-button {
-  padding: 0;
-  block-size: 36px;
   margin-inline-end: 6px;
   margin-block-start: 2px;
   border: none;
+  padding: 0;
   background-color: transparent;
   cursor: pointer;
+  block-size: 36px;
 }
 
 .card__icon-button:focus {
@@ -397,9 +397,9 @@
 }
 
 .dialog {
-  background-color: var(--bg-color);
   border: 2px solid var(--accent-color);
   padding: 30px;
+  background-color: var(--bg-color);
   max-inline-size: 353px;
 }
 
@@ -408,31 +408,31 @@
 }
 
 .dialog__container .floppy {
+  align-self: center;
+  color: var(--accent-color);
   block-size: 39px;
   inline-size: 39px;
-  color: var(--accent-color);
   min-inline-size: 39px;
-  align-self: center;
   mix-blend-mode: normal;
 }
 
 .dialog__header {
-  font-family: var(--accent-font-family), fantasy;
-  color: var(--accent-color);
-  font-size: 14px;
-  text-transform: uppercase;
-  line-height: 150%;
   padding-inline-start: 20px;
+  color: var(--accent-color);
+  font-family: var(--accent-font-family), fantasy;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
 }
 
 .dialog__button {
   position: relative;
+  margin-block-start: 30px;
   border: 2px solid var(--accent-color);
   background-color: var(--bg-color);
   cursor: pointer;
   block-size: 38px;
   inline-size: 100%;
-  margin-block-start: 30px;
 }
 
 .dialog__button .button__text {
@@ -467,6 +467,7 @@
 }
 
 @media (max-width: 700px) {  
+  
   .header {
     padding-inline: 0;
     inline-size: 100%;
