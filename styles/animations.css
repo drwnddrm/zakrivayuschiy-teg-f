@@ -12,30 +12,6 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
-
-
-@keyframes header-focus {
-  0% {
-    inline-size: 0%;
-    opacity: 0;
-  }
-  100% {
-    inline-size: 100%;
-    opacity: 0.6
-  }
-} 
-
-@keyframes header-focus-backward {
-  0% {
-    inline-size: 100%;
-    opacity: 0.6;
-  }
-  100% {
-    inline-size: 0%;
-    opacity: 0
-  }
-} 
-
 @keyframes arrow {
   0% {
     left: -14px;
@@ -43,34 +19,8 @@
   100% {
     left: -10px;
   }
-} 
-
-@keyframes button-hover {
-  0% {
-    inline-size: 0%;
-  }
-  100% {
-    inline-size: 100%;
-  }
 }
 
-@keyframes button-hover-backward {
-  0% {
-    inline-size: 100%;
-  }
-  100% {
-    inline-size: 0%;
-  }
-}
-
-@keyframes button-focus {
-  0% {
-    outline-color: transparent;
-  }
-  100% {
-    outline-color: var(--accent-color);
-  }
-}
 
 @keyframes heart-scale {
   0% {

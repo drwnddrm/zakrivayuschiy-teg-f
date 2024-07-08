@@ -26,6 +26,7 @@
       repeating-linear-gradient(to bottom, var(--gradient-color) 0 2px, transparent 0 4px),
       repeating-linear-gradient(to bottom, var(--accent-gradient-first-color), var(--accent-gradient-second-color));
   background-size: cover;
+  background-position: top;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: 'wght' var(--main-font-weight);
@@ -87,13 +88,13 @@
 
 .theme-menu__button:disabled {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  transition: 0.3s ease;
   pointer-events: none;
 }
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .theme-menu__button:focus-visible {
@@ -103,25 +104,25 @@
 .theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .theme-menu__button::after {
   content: '';
+  inline-size: 0%;
+  block-size: 2px;
   position: absolute;
   inset: 0;
   top: 15px;
   outline: none;
   opacity: 0.6;
   background-color: var(--accent-color);
-  animation: header-focus-backward 0.3s ease;
-  block-size: 2px;
-  inline-size: 0;
+  transition: inline-size 0.3s ease;
 }
 
 .theme-menu__button:focus-visible::after {
-  animation: header-focus 0.3s ease;
   inline-size: 100%;
+  transition: 0.3s ease;
 }
 
 .theme-menu__button:disabled::before {
@@ -165,36 +166,36 @@
 
 .card__img {
   border-block: 2px solid var(--accent-color);
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   inline-size: 100%;
 }
 
-.img-filter-1 {
+.filter-blur {
   filter: blur(5px);
 }
 
-.img-filter-2 {
+.filter-brightness {
   filter: brightness(0.4);
 }
 
-.img-filter-3 {
+.filter-contrast {
   filter: contrast(200%);
 }
 
-.img-filter-4 {
+.filter-grayscale {
   filter: grayscale(50%);
 }
 
-.img-filter-5 {
+.filter-hue {
   filter: hue-rotate(90deg);
 }
 
-.img-filter-6 {
+.filter-grayscale-contrast {
   filter: grayscale(1) contrast(200%);
 }
 
-.img-filter-7 {
+.filter-opacity {
   filter: opacity(25%);
 }
 
@@ -248,60 +249,60 @@
 
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
-  animation: button-focus 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .like-icon:hover .core {
   fill: var(--accent-color);
-  transition: fill 0.3s;
+  transition: 0.3s linear;
 }
 
 .like-icon:hover .main-body {
   fill: var(--accent-color);
-  transition: fill 0.3s 0.05s;
+  transition: 0.3s 0.05s linear;
 }
 
 .like-icon:active .core {
   fill: var(--fill-color);
-  transition: fill 0.3s;
+  transition: 0.3s linear;
 }
 
 .like-icon:active .main-body {
   fill: var(--fill-color);
-  transition: fill 0.3s 0.05s;
+  transition: 0.3s 0.05s linear;
 }
 
 .like-icon.is-liked .core {
   fill: var(--fill-color);
-  transition: fill 0.3s;
+  transition: 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--fill-color);
-  transition: fill 0.3s 0.05s;
+  transition: 0.3s 0.05s linear;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--fill-color);
-  transition: fill 0.3s 0.06s;
+  transition: 0.3s 0.06s linear;
 }
 
 .like-icon.is-liked .heart {
   transform-origin: center;
-  animation: heart-scale 0.3s ease-in 0.01s;
+  animation: heart-scale 0.3s ease-in 0.01s alternate;
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks-opacity 0.3s ease-in 0.1s;
+  animation: sparks-opacity 0.3s ease-in 0.1s alternate;
 }
 
 .core {
-  transition: 0.3s 0.03s;
+  transition: 0.3s 0.03s linear;
 }
 
 .main-body {
   fill: none;
-  transition: 0.3s;
+  transition: 0.3s linear;
 }
 
 .sparks {
@@ -309,35 +310,8 @@
 }
 
 .card__like-button {
-  position: relative;
-  border: 2px solid var(--accent-color);
-  background-color: transparent;
-  cursor: pointer;
   block-size: 40px;
   inline-size: 130px;
-}
-
-.card__like-button::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: var(--accent-color);
-  animation: button-hover-backward 0.5s ease-in-out;
-  inline-size: 0%;
-}
-
-.card__like-button:hover::after {
-  animation: button-hover 0.5s ease-in-out;
-  inline-size: 100%;
-}
-
-.card__like-button:focus {
-  outline: none;
-}
-
-.card__like-button:focus-visible {
-  box-shadow: 2px 2px var(--accent-color);
-  transition: box-shadow 0.3s ease;
 }
 
 .button__text {
@@ -349,43 +323,18 @@
   mix-blend-mode: difference;
 }
 
-.footer {
+.save {
   margin-block-start: 54px;
   margin-block-end: 103px;
+  display: flex;
+  justify-content: center;
 }
 
-.footer__button {
-  position: relative;
+.save__button {
   display: flex;
   align-items: center;
   gap: 10px;
-  border: 2px solid var(--accent-color);
   padding: 12px 17px 15px 17px;
-  background-color: var(--bg-color);
-  cursor: pointer;
-}
-
-.footer__button::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: var(--accent-color);
-  animation: button-hover-backward 0.5s ease-in-out;
-  inline-size: 0%;
-}
-
-.footer__button:hover::after {
-  animation: button-hover 0.5s ease-in-out;
-  inline-size: 100%;
-}
-
-.footer__button:focus {
-  outline: none;
-}
-
-.footer__button:focus-visible {
-  box-shadow: 2px 2px var(--accent-color);
-  transition: box-shadow 0.3s ease;
 }
 
 .floppy {
@@ -426,11 +375,7 @@
 }
 
 .dialog__button {
-  position: relative;
   margin-block-start: 30px;
-  border: 2px solid var(--accent-color);
-  background-color: var(--bg-color);
-  cursor: pointer;
   block-size: 38px;
   inline-size: 100%;
 }
@@ -439,31 +384,38 @@
   text-transform: uppercase;
 }
 
-.dialog__button::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: var(--accent-color);
-  animation: button-hover-backward 0.5s ease-in-out;
-  inline-size: 0%;
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
 }
 
-.dialog__button:hover::after {
-  animation: button-hover 0.5s ease-in-out;
-  inline-size: 100%;
+.button {
+  position: relative;
+  cursor: pointer;
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
 }
 
-.dialog__button:focus {
+.button:focus {
   outline: none;
 }
 
-.dialog__button:focus-visible {
+.button:focus-visible {
   box-shadow: 2px 2px var(--accent-color);
-  transition: box-shadow 0.3s ease;
+  transition: 0.3s ease;
 }
 
-.dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.75);
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  inline-size: 0%;
+  background-color: var(--accent-color);
+  transition: inline-size 0.5s ease-in-out;
+}
+
+.button:hover::after {
+  inline-size: 100%;
+  transition: 0.5s ease-in-out;
 }
 
 @media (max-width: 700px) {
@@ -481,7 +433,7 @@
   }
 
   .roadmap__list {
-    gap: 51px;
+    gap: 55px;
   }
   
   .card__header {
@@ -503,7 +455,7 @@
     padding: 22px 23px 20px 0;
   }
   
-  .footer__button {
+  .save__button {
     flex-direction: column;
     gap: 9px;
     padding: 14px 20px 15px 20px;
