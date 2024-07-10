@@ -26,7 +26,7 @@
       repeating-linear-gradient(to bottom, var(--gradient-color) 0 2px, transparent 0 4px),
       repeating-linear-gradient(to bottom, var(--accent-gradient-first-color), var(--accent-gradient-second-color));
   background-size: cover;
-  background-position: top;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: 'wght' var(--main-font-weight);
@@ -38,7 +38,7 @@
   justify-content: center;
   align-items: center;
   margin-block-start: 100px;
-  margin-block-end: 100px;
+  margin-block-end: 105px;
   border: 2px solid var(--accent-color);
   padding-inline: 120px;
   padding-block-end: 15px;
@@ -88,13 +88,11 @@
 
 .theme-menu__button:disabled {
   opacity: 0.6;
-  transition: 0.3s ease;
   pointer-events: none;
 }
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: 0.3s ease;
 }
 
 .theme-menu__button:focus-visible {
@@ -104,7 +102,6 @@
 .theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
-  transition: 0.3s ease;
 }
 
 .theme-menu__button::after {
@@ -122,13 +119,12 @@
 
 .theme-menu__button:focus-visible::after {
   inline-size: 100%;
-  transition: 0.3s ease;
 }
 
 .theme-menu__button:disabled::before {
   content: '▶';
   position: absolute;
-  left: -14px;
+  left: -20px;
   animation: arrow 0.5s ease-in-out 0s infinite alternate both;
 }
 
@@ -225,6 +221,7 @@
   padding-block-start: 28px;
   font-size: 18px;
   font-variation-settings: 'wght' var(--main-font-weight);
+  line-height: 1.167;
 }
 
 .card__buttons {
@@ -241,6 +238,8 @@
   background-color: transparent;
   cursor: pointer;
   block-size: 36px;
+  outline: 2px solid transparent;
+  transition: 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -249,7 +248,6 @@
 
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
-  transition: 0.3s ease;
 }
 
 .like-icon:hover .core {
@@ -296,12 +294,17 @@
   animation: sparks-opacity 0.3s ease-in 0.1s alternate;
 }
 
+.like-icon .contour {
+  fill: var(--contour-color);
+  transition: 0.1s linear;
+}
+
 .core {
   transition: 0.3s 0.03s linear;
 }
 
 .main-body {
-  fill: none;
+  fill: transparent;
   transition: 0.3s linear;
 }
 
@@ -393,6 +396,8 @@
   cursor: pointer;
   border: 2px solid var(--accent-color);
   background-color: var(--bg-color);
+  box-shadow: 0 0 var(--accent-color);
+  transition: 0.3s ease;
 }
 
 .button:focus {
@@ -401,7 +406,6 @@
 
 .button:focus-visible {
   box-shadow: 2px 2px var(--accent-color);
-  transition: 0.3s ease;
 }
 
 .button::after {
@@ -415,7 +419,6 @@
 
 .button:hover::after {
   inline-size: 100%;
-  transition: 0.5s ease-in-out;
 }
 
 @media (max-width: 700px) {
